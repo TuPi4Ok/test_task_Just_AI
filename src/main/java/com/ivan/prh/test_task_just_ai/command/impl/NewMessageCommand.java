@@ -7,6 +7,7 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -15,7 +16,7 @@ import java.util.Random;
 import static com.ivan.prh.test_task_just_ai.constant.CommandConstant.OK_MESSAGE;
 import static com.ivan.prh.test_task_just_ai.constant.CommandConstant.VK_API_URL;
 
-@Component("message_new")
+@Service("message_new")
 @RequiredArgsConstructor
 @Slf4j
 public class NewMessageCommand implements Command {
