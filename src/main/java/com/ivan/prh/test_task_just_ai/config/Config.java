@@ -1,4 +1,4 @@
-package com.ivan.prh.test_task_just_ai;
+package com.ivan.prh.test_task_just_ai.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

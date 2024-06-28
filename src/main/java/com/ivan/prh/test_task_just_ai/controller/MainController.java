@@ -1,13 +1,12 @@
-package com.ivan.prh.test_task_just_ai;
+package com.ivan.prh.test_task_just_ai.controller;
 
 
+import com.ivan.prh.test_task_just_ai.command.Command;
+import com.ivan.prh.test_task_just_ai.dto.Request;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestClient;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Map;
 
@@ -19,6 +18,6 @@ public class MainController {
 
     @PostMapping
     public String access(@RequestBody Request request) {
-        return commands.get(request.getType()).execute(request);
+        return commands.getOrDefault(request.type(), commands.get("not_supported")).execute(request);
     }
 }
